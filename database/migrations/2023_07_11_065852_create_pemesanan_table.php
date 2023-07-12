@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,15 +10,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pemesanan', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); 
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('no_telpon');
-            $table->rememberToken();
+            $table->unsignedBigInteger('user_id');
+            $table->date('tanggal_pemesanan');
+            $table->string('status_pemesanan');
+            $table->decimal('total_pemesanan', 10, 2);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            
         });
     }
 
@@ -28,7 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pemesanan');
     }
 };
 ?>
