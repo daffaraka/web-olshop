@@ -18,7 +18,7 @@
     <body class="antialiased">
     <div>
 
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
 
 <div class="c_home-frame">
 
