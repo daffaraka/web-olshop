@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\HomeController;
-use app\Http\Controllers\PemesananController;
-use app\Http\Controllers\PembayaranController;
-use app\Http\Controllers\MetodePembayaranController;
-use app\Http\Controllers\TunaiController;
-use app\Http\Controllers\TransferController;
-use app\Http\Controllers\DompetElektronikController;
-use app\Http\Controllers\BarangController;
-use app\Http\Controllers\HistoriPemesananController;
-use app\Http\Controllers\KategoriBarangController;
-use app\Http\Controllers\StokBarangController;
-use app\Http\Controllers\RoleController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\MetodePembayaranController;
+use App\Http\Controllers\TunaiController;
+use App\Http\Controllers\TransferController;
+use App\Http\Controllers\DompetElektronikController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\HistoriPemesananController;
+use App\Http\Controllers\KategoriBarangController;
+use App\Http\Controllers\StokBarangController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +25,7 @@ use app\Http\Controllers\RoleController;
 |
 */
 
-Route::get('/', function () {
-    return view("welcome");
-});
-Route::get('/home', function () {
-    return view("home");
-});
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/login', function () {
     return view("login");
@@ -96,19 +91,19 @@ Route::get('Barang/{id}/edit', [BarangController::class, 'edit'])->name('Barang.
 Route::put('Barang/{id}', [BarangController::class, 'update'])->name('Barang.update');
 Route::delete('Barang/{id}', [BarangController::class, 'destroy'])->name('Barang.destroy');
 
-Route::resource('HistoriPemeasanan', HistoriPemeasananController::Class);
-Route::get('HistoriPemeasanan', [HistoriPemeasananController::class, 'index'])->name('HistoriPemesanan.index');
-Route::get('HistoriPemesanan/create', [HistoriPemeasananController::class, 'create'])->name('HistoriPemesanan.create');
-Route::post('HistoriPemesanan', [HistoriPemeasananController::class, 'store'])->name('HistoriPemesanan.store');
-Route::get('HistoriPemesanan/{id}/edit', [HistoriPemeasananController::class, 'edit'])->name('HistoriPemesanan.edit');
-Route::put('HistoriPemesanan/{id}', [HistoriPemeasananController::class, 'update'])->name('HistoriPemesanan.update');
-Route::delete('HistoriPemesanan/{id}', [HistoriPemeasananController::class, 'destroy'])->name('HistoriPemesanan.destroy');
+Route::resource('HistoriPemesanan', HistoriPemesananController::Class);
+Route::get('HistoriPemesanan', [HistoriPemesananController::class, 'index'])->name('HistoriPemesanan.index');
+Route::get('HistoriPemesanan/create', [HistoriPemesananController::class, 'create'])->name('HistoriPemesanan.create');
+Route::post('HistoriPemesanan', [HistoriPemesananController::class, 'store'])->name('HistoriPemesanan.store');
+Route::get('HistoriPemesanan/{id}/edit', [HistoriPemesananController::class, 'edit'])->name('HistoriPemesanan.edit');
+Route::put('HistoriPemesanan/{id}', [HistoriPemesananController::class, 'update'])->name('HistoriPemesanan.update');
+Route::delete('HistoriPemesanan/{id}', [HistoriPemesananController::class, 'destroy'])->name('HistoriPemesanan.destroy');
 
 Route::resource('KategoriBarang', KategoriBarangController::Class);
 Route::get('KategoriBarang', [KategoriBarangController::class, 'index'])->name('KategoriBarang.index');
 Route::get('KategoriBarang/create', [KategoriBarangController::class, 'create'])->name('KategoriBarang.create');
 Route::post('KategoriBarang', [KategoriBarangController::class, 'store'])->name('KategoriBarang.store');
-Route::get('KategoriBarang/{id}/edit', [KategoriBarangController::class, 'edit'])->name('TunaKategoriBarangi.edit');
+Route::get('KategoriBarang/{id}/edit', [KategoriBarangController::class, 'edit'])->name('KategoriBarangi.edit');
 Route::put('KategoriBarang/{id}', [KategoriBarangController::class, 'update'])->name('KategoriBarang.update');
 Route::delete('KategoriBarang/{id}', [KategoriBarangController::class, 'destroy'])->name('KategoriBarang.destroy');
 

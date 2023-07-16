@@ -11,7 +11,9 @@ class HistoriPemesananController extends Controller
      */
     public function index()
     {
-        //
+        return view('HistoriPemesanan.index', [
+            'title' => 'Histori Pemesanan'
+        ]);
     }
 
     /**
