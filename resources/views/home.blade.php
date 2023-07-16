@@ -25,7 +25,7 @@
 
     <main>
         <section>
-            ini nanti contentnya
+            ini nanti contentnya 
         </section>
     </main>
 
