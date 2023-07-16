@@ -1,55 +1,153 @@
-/* CSS untuk navbar */
+/* home.css */
+
+/* Style the navbar */
 .navbar {
-  background-color: #f8f9fa;
+  background-color: #F9FBE7;
+  padding: 10px;
 }
 
-.navbar-brand {
-  color: #000;
-  font-weight: bold;
+
+/* Style the perusahaan div */
+.perusahaan {
+  float: left;
 }
 
+/* Style the perusahaan div image */
+.perusahaan img {
+  width: 60px;
+  height: 60px;
+  margin-left: 40px;
+}
+
+
+/* Style the navbar links */
 .nav-link {
-  color: #000;
+  color: darkgrey;
 }
 
+.nav-link:hover {
+  color: black;
+  background-color: #dba39a3b;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #DBA39A;
+  color: whitesmoke;
+}
+
+.nav-pills .nav-link {
+  background-color: #dba39a3b;
+  color: #000000;
+  font-weight: normal;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #dba39a3b;
+  color: #000000;
+  font-weight: normal;
+}
+
+/* Style the active link */
 .nav-link.active {
   font-weight: bold;
 }
 
+/* Style the search form */
 .form-control {
-  border-radius: 0;
+  border-radius: 10px;
+  border: 1px solid #dc7896;
+  padding: 5px 10px;
 }
 
-.btn-outline-success {
-  border-radius: 0;
-  color: #000;
-  border-color: #000;
+/* Style the search button */
+
+.btn-outline-success{
+  background-color: transparent;
+  border-color: #dc7896;
+  color: #dc7896;
+}
+.btn-outline-success:hover{
+  color: #ECCDB4;
+}
+.search:hover{
+  color:#ECCDB4;
 }
 
-/* CSS untuk shopping cart */
-.cart {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
-.cart i {
-  font-size: 20px;
+/* Style the cart icon */
+.nav-link .fas.fa-shopping-cart {
   color: #c40847;
 }
-
-/* CSS untuk login */
-.login {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.nav-link .fas.fa-shopping-cart:hover{
+  color: #ECCDB4;
 }
 
-.login a {
-  color: #000;
-  margin-right: 50px;
+/*CSS for section on a main */
+section{
+  min-height: 100vh;
 }
 
-/* CSS untuk konten lainnya */
-/* Tambahkan CSS tambahan sesuai kebutuhan Anda */
+/* CSS for the footer */
+footer{
+  background-color: #F9FBE7;
+  padding: 20px;
+  position: static;
+}
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.gap-4 > * {
+  margin-right: 1rem;
+}
+
+/* Title styles */
+.header-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+.title-left p {
+  font-size: 14px;
+}
+
+/* Address styles */
+.title-middle address {
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+/* Social media icon styles */
+.title-sosmed i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Adjust the colors as per your preference */
+.title-sosmed i.fa-instagram {
+  color: #e4405f;
+}
+
+.title-sosmed i.fa-twitter {
+  color: #1da1f2;
+}
+
+.title-sosmed i.fa-tiktok {
+  color: #000000;
+}
+
+.title-sosmed i.fa-whatsapp {
+  color: #25d366;
+}
+
+.title-sosmed i.fa-envelopes {
+  color: #333333;
+}
 
