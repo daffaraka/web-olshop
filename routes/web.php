@@ -25,7 +25,7 @@ use App\Http\Controllers\RoleController;
 |
 */
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/login', function () {
     return view("login");
