@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KategoriBarang;
 use Illuminate\Http\Request;
 
 class KategoriBarangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $data['kategori'] = KategoriBarang::all();
+        return view('Kategori.kategori-index',$data);
     }
 
     /**
