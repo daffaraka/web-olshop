@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tunai extends Model
+class DompetElektronik extends Model
 {
     use HasFactory;
 
-    protected $table = 'tunai';
+    protected $table = 'dompet_elektronik';
 
-    protected $primaryKey = 'id_tunai';
+    protected $primaryKey = 'id_dompet_elektronik';
 
     protected $fillable = [
         'id_pembayaran',
         'id_metode',
         'nama_metode',
-        'uang_kembalian',
+        'no_referensi',
+        'kode_transaksi',
     ];
 
     public function pembayaran()

@@ -5,28 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tunai extends Model
+class MetodePembayaran extends Model
 {
     use HasFactory;
 
-    protected $table = 'tunai';
+    protected $table = 'metode_pembayaran';
 
-    protected $primaryKey = 'id_tunai';
+    protected $primaryKey = 'id_metode_pembayaran';
 
     protected $fillable = [
         'id_pembayaran',
-        'id_metode',
         'nama_metode',
-        'uang_kembalian',
     ];
 
     public function pembayaran()
     {
         return $this->belongsTo(Pembayaran::class, 'id_pembayaran');
-    }
-
-    public function metodePembayaran()
-    {
-        return $this->belongsTo(MetodePembayaran::class, 'id_metode');
     }
 }

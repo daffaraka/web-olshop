@@ -5,7 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class pemesanan extends Model
+class Pemesanan extends Model
 {
     use HasFactory;
+
+    protected $table = 'pemesanan';
+
+    protected $primaryKey = 'id_pemesanan';
+
+    protected $fillable = [
+        'user_id',
+        'tanggal_pemesanan',
+        'status_pemesanan',
+        'total_pemesanan',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
