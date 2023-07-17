@@ -24,4 +24,9 @@ class Pembayaran extends Model
     {
         return $this->belongsTo(Pemesanan::class, 'id_pemesanan');
     }
+
+    public function pemesanan(){
+    return $this->hasMany(Pemesanan::class);
+    }
+
 }
