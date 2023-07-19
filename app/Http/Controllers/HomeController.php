@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Barang;
 use App\Models\Pemesanan;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -21,10 +22,16 @@ class HomeController extends Controller
         ]);
     }
 
-
-    public function addToCart($id) {
-
+    public function show ($id) {
         $barang = Barang::find($id);
+
+    }
+
+
+    public function addToCart(Request $request) {
+
+
+        $barang = Barang::find($request->id_barang);
 
         Pemesanan::create([
             'user_id' => Auth::user()->id,
@@ -34,8 +41,16 @@ class HomeController extends Controller
         ]);
 
 
-        return redirect()->route();
+        return redirect()->route('cart');
 
+    }
+
+    public function cart() {
+
+        $user_id = Auth::user()->id;
+        $cart = Pemesanan::where('user_id',$user_id)->where('status_pemesanan','pending')->get();
+
+        return view('cart',compact('cart'));
     }
 
 
