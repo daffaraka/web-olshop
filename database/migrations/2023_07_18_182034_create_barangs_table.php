@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -10,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('barang', function (Blueprint $table) {
+        Schema::create('barangs', function (Blueprint $table) {
             $table->id();
             $table->string('nama_barang');
             $table->text('deskripsi_barang');
             $table->string('ukuran_barang');
             $table->float('harga_barang');
+            $table->unsignedBigInteger('id_kategori');
+
+            $table->foreign('id_kategori')->references('id')->on('kategori_barangs');
+
             $table->timestamps();
         });
     }
@@ -25,7 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('barang');
+        Schema::dropIfExists('barangs');
     }
 };
-?>

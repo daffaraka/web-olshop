@@ -19,7 +19,8 @@ class KategoriBarangController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = 'Buat Kategori';
+        return view('Kategori.kategori-create',$data);
     }
 
     /**
@@ -27,13 +28,15 @@ class KategoriBarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        KategoriBarang::create($request->all());
+
+        return redirect()->route('KategoriBarang.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         //
     }
@@ -41,24 +44,31 @@ class KategoriBarangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $data['kategori'] = KategoriBarang::find($id);
+
+        return view('Kategori.kategori-edit',$data);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,$id)
     {
-        //
+        $kategori = KategoriBarang::find($id);
+        $kategori->update($request->all());
+
+        return redirect()->route('KategoriBarang.edit',$kategori);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        KategoriBarang::find($id)->delete();
+
+        return redirect()->route('KategoriBarang.index');
     }
 }

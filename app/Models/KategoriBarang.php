@@ -9,9 +9,7 @@ class KategoriBarang extends Model
 {
     use HasFactory;
 
-    protected $table = 'kategori_barang';
-
-    protected $primaryKey = 'id_kategori_barang';
+    protected $table = 'kategori_barangs';
 
     protected $fillable = [
         'id_barang',
@@ -20,6 +18,6 @@ class KategoriBarang extends Model
 
     public function barang()
     {
-        return $this->belongsTo(Barang::class, 'id_barang');
+        return $this->hasMany(Barang::class);
     }
 }

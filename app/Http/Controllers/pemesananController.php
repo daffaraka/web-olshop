@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pemesanan;
 use Illuminate\Http\Request;
 
 class PemesananController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $data['pemesanan'] = pemesanan::all();
+        return view('pemesanan.pemesanan-index', $data);
     }
 
     /**
@@ -19,7 +18,8 @@ class PemesananController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = 'Buat pemesanan';
+        return view('pemesanan.pemesanan-create', $data);
     }
 
     /**
@@ -27,7 +27,9 @@ class PemesananController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        pemesanan::create($request->all());
+
+        return redirect()->route('pemesanan.index');
     }
 
     /**
@@ -43,7 +45,9 @@ class PemesananController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['pemesanan'] = pemesanan::find($id);
+
+        return view('pemesanan.pemesanan-edit', $data);
     }
 
     /**
@@ -51,7 +55,10 @@ class PemesananController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $pemesanan = pemesanan::find($id);
+        $pemesanan->update($request->all());
+
+        return redirect()->route('pemesanan.edit', $pemesanan);
     }
 
     /**
@@ -59,6 +66,8 @@ class PemesananController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        pemesanan::find($id)->delete();
+
+        return redirect()->route('pemesanan.index');
     }
 }
