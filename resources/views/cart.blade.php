@@ -12,8 +12,8 @@
       <div class="banner_content text-center">
         <h2>Keranjang Belanja</h2>
         <div class="page_link">
-          <a href="{{ url('/') }}">Home</a>
-          <a href="{{ route('front.list_cart') }}">Cart</a>
+          {{-- <a href="{{ url('/') }}">Home</a>
+          <a href="{{ route('front.list_cart') }}">Cart</a> --}}
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
       <!-- DISABLE BAGIAN INI JIKA INGIN MELIHAT HASILNYA TERLEBIH DAHULU -->
       <!-- KARENA MODULENYA AKAN DIKERJAKAN PADA SUB BAB SELANJUTNYA -->
       <!-- HANYA SAJA DEMI KEMUDAHAN PENULISAN MAKA SAYA MASUKKAN PADA BAGIAN INI -->
-      <form action="{{ route('front.update_cart') }}" method="post">
+      <form action="" method="post">
         @csrf
         <!-- DISABLE BAGIAN INI JIKA INGIN MELIHAT HASILNYA TERLEBIH DAHULU -->
 

@@ -11,8 +11,6 @@ class Pemesanan extends Model
 
     protected $table = 'pemesanan';
 
-    protected $primaryKey = 'id_pemesanan';
-
     protected $fillable = [
         'user_id',
         'tanggal_pemesanan',

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pembayaran', function (Blueprint $table) {
+        Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_pemesanan');
             $table->date('tanggal_pembayaran');
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->boolean('status_pembayaran');
             $table->timestamps();
 
-            $table->foreign('id_pemesanan')->references('id')->on('pemesanan');
+            $table->foreign('id_pemesanan')->references('id')->on('pemesanans');
         });
     }
 
@@ -28,8 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pembayaran');
+        Schema::dropIfExists('pembayarans');
     }
 };
-
-?>

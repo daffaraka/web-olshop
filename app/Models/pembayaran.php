@@ -11,8 +11,6 @@ class Pembayaran extends Model
 
     protected $table = 'pembayaran';
 
-    protected $primaryKey = 'id_pembayaran';
-
     protected $fillable = [
         'id_pemesanan',
         'tanggal_pembayaran',
@@ -25,8 +23,5 @@ class Pembayaran extends Model
         return $this->belongsTo(Pemesanan::class, 'id_pemesanan');
     }
 
-    public function pemesanan(){
-    return $this->hasMany(Pemesanan::class);
-    }
 
 }
