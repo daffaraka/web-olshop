@@ -22,8 +22,7 @@
                                 <input type="hidden" name="id_barang" value="{{ $barang->id ?? 1 }}">
                                 <input class="form-control text-center me-3" id="inputQuantity" type="num"
                                     value="1" style="max-width: 3rem" />
-                                <button class="btn btn-block btn-outline-dark flex-shrink-0 mt-4" type="button">
-                                    <i class="bi-cart-fill me-1"></i>
+                                <button class="btn btn-block btn-outline-dark flex-shrink-0 mt-4" type="submit">
                                     Add to cart
                                 </button>
                             </form>

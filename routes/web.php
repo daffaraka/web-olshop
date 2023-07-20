@@ -125,18 +125,19 @@ Route::put('Role/{id}', [RoleController::class, 'update'])->name('Role.update');
 Route::delete('Role/{id}', [RoleController::class, 'destroy'])->name('Role.destroy');
 
 
-Route::get('detail-pesanan',function() {
-    return view('beranda.detailPesanan',['title'=>'Detail Pesanan']);
+// Route::get('detail-pesanan',function() {
+//     return view('beranda.detailPesanan',['title'=>'Detail Pesanan']);
+// });
+
+Route::get('detail-barang',function() {
+    return view('beranda.detailBarang',['title'=>'Detail Barang']);
 });
 
 Route::get('cart',function() {
     return view('cart',['title'=>'Cart']);
-});
+})->name('cart');
 
-// routes/web.php
-Route::resource('about', AboutController::Class);
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-
+Route::post('add-to-cart',[HomeController::class,'addToCart'])->name('addToCart');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
