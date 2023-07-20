@@ -13,6 +13,7 @@ use App\Http\Controllers\HistoriPemesananController;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\StokBarangController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,7 +85,7 @@ Route::put('DompetElektronik/{id}', [DompetElektronikController::class, 'update'
 Route::delete('DompetElektronik/{id}', [DompetElektronikController::class, 'destroy'])->name('DompetElektronik.destroy');
 
 Route::resource('Barang', BarangController::Class);
-Route::get('Barang', [BarangController::class, 'index'])->name('Barang.index');
+Route::get('Barang', [BarangController::class, 'index'])->name('barang-index');
 Route::get('Barang/create', [BarangController::class, 'create'])->name('Barang.create');
 Route::post('Barang', [BarangController::class, 'store'])->name('Barang.store');
 Route::get('Barang/{id}/edit', [BarangController::class, 'edit'])->name('Barang.edit');
@@ -131,6 +132,11 @@ Route::get('detail-pesanan',function() {
 Route::get('cart',function() {
     return view('cart',['title'=>'Cart']);
 });
+
+// routes/web.php
+Route::resource('about', AboutController::Class);
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

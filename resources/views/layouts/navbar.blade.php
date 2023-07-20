@@ -6,16 +6,21 @@
 
         <div class="collapse navbar-collapse justify-content-center gap-3" id="navbarSupportedContent">
             <ul class="nav nav-pills nav-fill">
-                <li class="home">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
+                <li class="nav-item">
+                            <a class="nav-link " href="{{ url('/') }}">Home</a>
+                        </li>
             </ul>
+            <!-- Navbar -->
             <ul class="navbar-nav">
-                <li class="about">
-                    <a class="nav-link" href="#">About</a>
+                <li class="nav-item">
+                    <a class="nav-link " href="{{ url('/about') }}">About</a>
                 </li>
+                <!-- Tambahkan menu lainnya di sini -->
+            </ul>
+            
+            <ul class="navbar-nav">
                 <li class="product">
-                    <a class="nav-link" href="#">Product</a>
+                    <a class="nav-link " href="{{ url('/barang') }}">Product</a>
                 </li>
 
             </ul>
