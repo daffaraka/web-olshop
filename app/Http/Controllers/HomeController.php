@@ -56,16 +56,19 @@ class HomeController extends Controller
     }
 
 
-    public function pembayaran($id)
+    public function pembayaran()
+    // Harusnya ini pembayaran($id) , untuk $id nya bisa kamu dapet dari id barang
     {
-        $pemesanan = Pemesanan::find($id);
+        $data['title'] = 'Pembayaran';
+        // $pemesanan = Pemesanan::find($id);
 
-        return view('home.pembayaran');
+        return view('beranda.pembayaran',$data);
     }
 
 
     public function pay($id)
     {
+        // Ini pay($id) pake id pemesanan
         $pemesanan = Pemesanan::find($id);
         Pembayaran::create([
             'id_pemesanan' => $pemesanan->id,

@@ -17,7 +17,7 @@
                             quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis
                             delectus ipsam minima ea iste laborum vero?</p>
                         <div class="d-flex">
-                            <form action="{{ route('addToCart') }}" method="POST">
+                            <form action="{{ route('pembayaran') }}" method="get">
                                 @csrf
                                 <input type="hidden" name="id_barang" value="{{ $barang->id ?? 1 }}">
                                 <input class="form-control text-center me-3" id="inputQuantity" type="num"
