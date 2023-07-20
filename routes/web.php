@@ -131,13 +131,16 @@ Route::delete('Role/{id}', [RoleController::class, 'destroy'])->name('Role.destr
 
 Route::get('detail-barang',function() {
     return view('beranda.detailBarang',['title'=>'Detail Barang']);
-});
+})->name('detail-barang');
 
 Route::get('cart',function() {
     return view('cart',['title'=>'Cart']);
 })->name('cart');
 
 Route::post('add-to-cart',[HomeController::class,'addToCart'])->name('addToCart');
+
+Route::get('pembayaran',[HomeController::class,'pembayaran'])->name('pembayaran');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
